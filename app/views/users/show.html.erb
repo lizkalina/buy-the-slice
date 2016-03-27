@@ -1,0 +1,7 @@
+Hello, <%= current_user.name_with_initial %>
+
+Here are your groups:
+<% binding.pry %>
+<% current_user.groups.each do |group| %>
+  <%= group.name %>
+<% end %>

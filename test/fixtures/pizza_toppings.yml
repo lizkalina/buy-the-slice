@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: pizza_toppings
+#
+#  id         :integer          not null, primary key
+#  pizza_id   :integer
+#  topping_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pizza_id: 1
+  topping_id: 1
+
+two:
+  pizza_id: 1
+  topping_id: 1

@@ -1,0 +1,14 @@
+<%= @group.name %>
+<%= @group.signup_deadline %>
+
+Organizer: <%= @organizer.name_with_initial %>
+
+Invite Pizza Groupees:
+<%= form_for @group, url: group_members_path(@group), method: :post do |f| %>
+<ul>
+<li><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_initial) %>
+</li>
+
+</ul>
+<%= f.submit "Add Members"%>
+<% end %>

@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: groups
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  organizer_id    :integer
+#  signup_deadline :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  organizer_id: 1
+  signup_deadline: 2016-03-27 08:19:53
+
+two:
+  name: MyString
+  organizer_id: 1
+  signup_deadline: 2016-03-27 08:19:53
