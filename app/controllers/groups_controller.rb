@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def new
     @group = Group.new
+    @users = User.all - [current_user]
   end
 
   def create
@@ -16,14 +17,22 @@ class GroupsController < ApplicationController
   def show
     @group = set_group
     @organizer = User.find_by(id:@group.organizer_id)
-    @users = User.all - [@organizer]
   end
 
-  def add_members
+  def edit
     @group = set_group
-    @group.update(member_params)
-    redirect_to @group
+    @users = User.all - [current_user]
   end
+
+  def update
+
+  end
+
+  # def add_members
+  #   @group = set_group
+  #   @group.update(member_params)
+  #   redirect_to @group
+  # end
 
   private
 
@@ -32,10 +41,10 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      params.require(:group).permit(:name,:signup_deadline)
+      params.require(:group).permit(:name,:signup_deadline,user_ids:[])
     end
 
     def member_params
-      params.require(:group).permit(user_ids:[])
+      params.require(:group).permit(members:[])
     end
 end

@@ -1,7 +1,14 @@
+<%= debug(params) %>
+
+<% if current_user.id == params[:id].to_i %>
+
 Hello, <%= current_user.name_with_initial %>
 
-Here are your groups:
-<% binding.pry %>
-<% current_user.groups.each do |group| %>
-  <%= group.name %>
+  Here are your groups:
+  <ul>
+  <% current_user.groups.each do |group| %>
+    <li id="group"> <%= link_to group.name, group_path(group) %></li> 
+    <%= button_tag "+Slice", class: "addSlice" %>
+  <% end %>
+</ul>
 <% end %>

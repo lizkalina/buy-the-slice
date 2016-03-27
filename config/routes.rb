@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'users/sign_in', to: 'devise/sessions#new', as: :sign_in
   get 'users/sign_up', to: 'devise/registrations#new', as: :sign_up
   get 'users/sign_out', to: 'devise/sessions#destroy', as: :sign_out
-  get 'users/:id', to: 'users#show'
+  get 'users/:id', to: 'users#show', as: :user
 
   resources :groups do
     post '/members' => 'groups#add_members', as: :members

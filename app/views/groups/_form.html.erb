@@ -1,0 +1,12 @@
+<%= form_for @group do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :signup_deadline %>:
+  <%= f.text_field :signup_deadline %><br />
+
+  <%= f.label 'tag your event:' %></p>
+  <%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_initial)%>
+
+  <%= f.submit %>
+<% end %>
